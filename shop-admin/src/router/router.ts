@@ -1,12 +1,18 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
-
+import Layout from '@/layout/AppLayout.vue'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      name: 'index',
-      path: '/index',
-      component: () => import('@/views/home/home.vue')
+      path: '/',
+      component: Layout,
+      children: [
+        {
+          name: 'home',
+          path: '/home',
+          component: () => import('@/views/home/home.vue')
+        }
+      ]
     }
   ]
 })

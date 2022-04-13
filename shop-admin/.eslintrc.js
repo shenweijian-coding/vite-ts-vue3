@@ -20,5 +20,13 @@ module.exports = {
   ],
   rules: {
     'vue/multi-word-component-names': 0
-  }
+  },
+  overrides: [
+    {
+      files: ['src/**/*.ts'],
+      rules: {
+        camelcase: 0
+      }
+    }
+  ]
 }
